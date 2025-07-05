@@ -8,34 +8,69 @@
   <title>University Website</title>
   <link rel="stylesheet" href="/static/css/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Newsreader:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900" />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Newsreader:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&family=DejaVu+Serif:wght@400;700" />
+  <link rel="icon" type="image/png" href="/static/media/logo.png" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
 
-<body class="bg-white text-gray-800">
+<body class="bg-gray-500 text-white" style="font-family: 'DejaVu Serif', Newsreader, 'Noto Sans', serif;">
   <!-- Navbar moved here as a component -->
-  <nav class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eaf3] px-10 py-3 bg-white">
-    <div class="flex items-center gap-4 text-[#0e111b]">
-      <div class="size-4">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
-        </svg>
-      </div>
-      <h2 class="text-[#0e111b] text-lg font-bold leading-tight tracking-[-0.015em]">Nuclear Studies University</h2>
+  <nav class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eaf3] px-4 @[850px]:px-10 py-3 bg-gray-700 text-white relative">
+    <div class="flex items-center gap-4 text-white">
+      <a href="/" class="size-12 @[480px]:size-15 @[850px]:size-20 bg-white rounded-full flex items-center justify-center transition-transform duration-200 hover:scale-105">
+        <img src="/static/media/logo.png" alt="KINPOE Logo" class="h-10 w-10 @[480px]:h-12 @[480px]:w-12 @[850px]:h-16 @[850px]:w-16 rounded-full object-contain" />
+      </a>
+      <a href="/" class="text-white text-lg @[480px]:text-xl @[850px]:text-2xl font-extrabold leading-tight tracking-[-0.015em] font-serif italic drop-shadow transition-transform duration-200 hover:scale-110">KINPOE</a>
     </div>
-    <div class="flex flex-1 justify-end gap-8">
-      <div class="flex items-center gap-9">
-        <a class="text-[#0e111b] text-sm font-medium leading-normal" href="#">Academics</a>
-        <a class="text-[#0e111b] text-sm font-medium leading-normal" href="#">Research</a>
-        <a class="text-[#0e111b] text-sm font-medium leading-normal" href="#">Admissions</a>
-        <a class="text-[#0e111b] text-sm font-medium leading-normal" href="#">About</a>
+    <div class="hidden md:flex flex-1 justify-end gap-8">
+      <div class="flex items-center gap-6 @[480px]:gap-9">
+        <a class="text-white text-base font-medium leading-normal transition-transform duration-200 hover:scale-110" href="#">Academics</a>
+        <a class="text-white text-base font-medium leading-normal transition-transform duration-200 hover:scale-110" href="#">Research</a>
+        <a class="text-white text-base font-medium leading-normal transition-transform duration-200 hover:scale-110" href="#">Admissions</a>
+        <a class="text-white text-base font-medium leading-normal transition-transform duration-200 hover:scale-110" href="#">About</a>
       </div>
-      <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#e7eaf3] text-[#0e111b] text-sm font-bold leading-normal tracking-[0.015em]">
-        <span class="truncate">Visit Campus</span>
+      <a href="#contact" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 @[480px]:h-12 @[850px]:h-14 px-4 @[480px]:px-6 @[850px]:px-8 bg-[#e7eaf3] text-gray-700 text-base @[480px]:text-lg @[850px]:text-xl font-bold leading-normal tracking-[0.015em] hover:bg-[#4e6097] hover:text-white transition-transform duration-200 hover:scale-105">
+        <span class="truncate">Contact Us</span>
+      </a>
+    </div>
+    <!-- Hamburger Icon -->
+    <button id="nav-toggle" class="md:hidden flex flex-col justify-center items-center w-10 h-10 ml-auto" aria-label="Open Menu">
+      <span class="block w-7 h-1 @[480px]:w-8 @[480px]:h-1.5 @[850px]:w-10 @[850px]:h-2 bg-white mb-1.5 rounded transition-all"></span>
+      <span class="block w-7 h-1 @[480px]:w-8 @[480px]:h-1.5 @[850px]:w-10 @[850px]:h-2 bg-white mb-1.5 rounded transition-all"></span>
+      <span class="block w-7 h-1 @[480px]:w-8 @[480px]:h-1.5 @[850px]:w-10 @[850px]:h-2 bg-white rounded transition-all"></span>
+    </button>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 @[480px]:w-80 @[850px]:w-96 bg-gray-800 text-white z-50 flex flex-col gap-6 p-8 transform translate-x-full transition-transform duration-300 md:hidden">
+      <button id="nav-close" class="self-end mb-6" aria-label="Close Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" @[480px]:w-32 @[480px]:h-32 fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M6 6l12 12M6 18L18 6"/></svg>
       </button>
+      <a class="text-white text-lg @[480px]:text-xl @[850px]:text-2xl font-medium leading-normal" href="#">Academics</a>
+      <a class="text-white text-lg @[480px]:text-xl @[850px]:text-2xl font-medium leading-normal" href="#">Research</a>
+      <a class="text-white text-lg @[480px]:text-xl @[850px]:text-2xl font-medium leading-normal" href="#">Admissions</a>
+      <a class="text-white text-lg @[480px]:text-xl @[850px]:text-2xl font-medium leading-normal" href="#">About</a>
+      <a href="#contact" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 @[480px]:h-12 @[850px]:h-14 px-4 @[480px]:px-6 @[850px]:px-8 bg-[#e7eaf3] text-gray-700 text-lg @[480px]:text-xl @[850px]:text-2xl font-bold leading-normal tracking-[0.015em] hover:bg-[#4e6097] hover:text-white mt-4">
+        <span class="truncate">Contact Us</span>
+      </a>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navClose = document.getElementById('nav-close');
+        navToggle.addEventListener('click', function() {
+          mobileMenu.classList.remove('translate-x-full');
+        });
+        navClose.addEventListener('click', function() {
+          mobileMenu.classList.add('translate-x-full');
+        });
+        // Optional: close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+        });
+      });
+    </script>
   </nav>
-  <main class="max-w-[1240px] mx-auto px-4">
+  <main class="">
     {% block content %}{% endblock %}
   </main>
   {% include 'footer.html' %}

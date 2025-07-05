@@ -1,0 +1,68 @@
+<div class="@container">
+  <div class="p-2 @[480px]:p-1">
+    <div class="relative flex min-h-[320px] @[480px]: w-100 max-w-[1200px] mx-auto flex-col gap-4 @[480px]:gap-6 bg-cover bg-center bg-no-repeat @[480px]:rounded-xl items-center justify-center p-2 @[480px]:p-4 overflow-hidden" id="carousel-container">
+      <div id="carousel-slides" class="absolute inset-0 w-[120%] left-1/2 -translate-x-1/2 h-full z-0 transition-all duration-700">
+        <img src="/static/media/a.jpg" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700 rounded-xl" style="z-index:1;" />
+        <img src="/static/media/b.jpg" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 rounded-xl" style="z-index:1;" />
+        <img src="/static/media/c.jpg" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 rounded-xl" style="z-index:1;" />
+        <img src="/static/media/d.jpg" class="carousel-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 rounded-xl" style="z-index:1;" />
+      </div>
+      <div class="absolute z-10 flex flex-col gap-1 text-right bg-black/40 p-1 @[480px]:p-2 rounded-xl bottom-2 right-2 @[480px]:bottom-6 @[480px]:right-6 max-w-[95vw] w-[90vw] @[480px]:w-[320px] @[768px]:w-[500px] items-end">
+        <h1 class="text-white font-black leading-tight tracking-[-0.033em] text-[min(max(0.6rem,3vw),1.25rem)] @[480px]:text-[min(max(0.85rem,2.5vw),1.75rem)] @[768px]:text-[min(max(1.1rem,2vw),2rem)] text-right">
+          Empowering Nuclear Excellence</h1>
+        <h2 class="text-white font-normal leading-normal text-[min(max(0.4rem,1.5vw),0.55rem)] @[480px]:text-[min(max(0.5rem,1vw),0.65rem)] @[768px]:text-[min(max(0.55rem,0.75vw),0.75rem)] text-right">
+          Join a community of scholars and innovators shaping the future of nuclear science and technology.</h2>
+        <button class="flex min-w-[84px] max-w-[380px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 @[480px]:h-12 @[850px]:h-14 px-2 @[480px]:px-3 @[850px]:px-3 bg-[#e7eaf3] text-gray-700 text-[0.85rem] font-bold tracking-[0.015em] hover:bg-[#4e6097] hover:text-white transition-transform duration-200 hover:scale-105 mt-1 mb-1">
+          <span class="truncate">Explore Programs</span>
+        </button>
+      </div>
+      <div class="absolute left-2 @[480px]:left-4 top-1/2 -translate-y-1/2 z-20">
+        <button id="carousel-prev" class="bg-black/50 text-white rounded-full p-1 @[480px]:p-2 hover:bg-black/80 transition"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" @[480px]:width="24" @[480px]:height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M15 6l-6 6 6 6"/></svg></button>
+      </div>
+      <div class="absolute right-2 @[480px]:right-4 top-1/2 -translate-y-1/2 z-20">
+        <button id="carousel-next" class="bg-black/50 text-white rounded-full p-1 @[480px]:p-2 hover:bg-black/80 transition"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" @[480px]:width="24" @[480px]:height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('#carousel-slides .carousel-img');
+    let current = 0;
+    let interval = null;
+
+    function showSlide(idx) {
+      images.forEach((img, i) => {
+        img.style.opacity = i === idx ? '1' : '0';
+      });
+      current = idx;
+    }
+
+    function nextSlide() {
+      showSlide((current + 1) % images.length);
+    }
+
+    function prevSlide() {
+      showSlide((current - 1 + images.length) % images.length);
+    }
+
+    document.getElementById('carousel-next').onclick = () => {
+      nextSlide();
+      resetInterval();
+    };
+    document.getElementById('carousel-prev').onclick = () => {
+      prevSlide();
+      resetInterval();
+    };
+
+    function startInterval() {
+      interval = setInterval(nextSlide, 3500);
+    }
+    function resetInterval() {
+      clearInterval(interval);
+      startInterval();
+    }
+    showSlide(0);
+    startInterval();
+  });
+</script>
