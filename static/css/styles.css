@@ -1,0 +1,16 @@
+/* static/styles.css */
+body {
+    font-family: sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+a {
+    color: #1e40af;
+    /* dark blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
