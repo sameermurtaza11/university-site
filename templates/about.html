@@ -1,29 +1,89 @@
 <!-- File: templates/about.html -->
 {% extends 'layout.html' %}
-{% block content %}
-<section class="space-y-10 py-12">
-    <h1 class="text-3xl font-bold text-blue-900">About Us</h1>
-    <div class="grid md:grid-cols-2 gap-8">
-        <div>
-            <h2 class="text-2xl font-semibold">Our Mission</h2>
-            <p>Empowering students with nuclear knowledge and leadership.</p>
+    {% block content %}
+    <section class="max-w-4xl mx-auto px-4 py-10"
+        <h1 class="text-[#143db7] tracking-light text-[32px] font-bold leading-tight mb-6">About Us</h1>
+        <div class="bg-white rounded-xl shadow p-6 mb-8">
+            <h2 class="text-[#0e111b] text-[22px] font-bold leading-tight mb-2">Our Mission</h2>
+            <p class="text-[#0e111b] text-base font-normal leading-normal">KINPOE is dedicated to advancing knowledge
+                and
+                fostering innovation in nuclear science and engineering. We strive to educate future leaders, conduct
+                groundbreaking research, and contribute to the responsible development and application of nuclear
+                technologies for the benefit of society.</p>
         </div>
-        <div>
-            <h2 class="text-2xl font-semibold">Our Vision</h2>
-            <p>To be a global leader in nuclear education and research.</p>
+        <div class="bg-white rounded-xl shadow p-6 mb-8">
+            <h2 class="text-[#0e111b] text-[22px] font-bold leading-tight mb-2">Our Vision</h2>
+            <p class="text-[#0e111b] text-base font-normal leading-normal">To be a world-renowned center of excellence
+                in
+                nuclear science and engineering, recognized for impactful research, exceptional educational programs,
+                and
+                commitment to addressing global challenges through nuclear innovation.</p>
         </div>
-    </div>
-    <div>
-        <h2 class="text-2xl font-semibold">Leadership</h2>
-        <p>Meet our experienced academic and administrative leaders.</p>
-    </div>
-    <div>
-        <h2 class="text-2xl font-semibold">Campus</h2>
-        <p>Located in a serene environment with modern labs and classrooms.</p>
-    </div>
-    <div>
-        <h2 class="text-2xl font-semibold">Our History</h2>
-        <p>Founded with a vision to advance nuclear sciences globally.</p>
-    </div>
-</section>
-{% endblock %}
+        <div class="bg-white rounded-xl shadow p-6 mb-8">
+            <h2 class="text-[#0e111b] text-[22px] font-bold leading-tight mb-4">Our Faculty</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 mb-6">
+                {% for member in faculty[:5] %}
+                <div
+                    class="flex flex-col items-center text-center gap-2 rounded-lg border border-[#d0d6e7] bg-[#f8f9fc] p-4">
+                    {% if member.photo %}
+                    <img src="{{ member.photo }}" alt="{{ member.name }}"
+                        class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-16 h-16 mb-2 border-4 border-[#e7eaf3]" />
+                    {% else %}
+                    <svg class="w-16 h-16 mb-2 text-gray-300 rounded-full border-4 border-[#e7eaf3]" fill="none"
+                        stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M6 20c0-2.21 3.58-4 6-4s6 1.79 6 4" />
+                    </svg>
+                    {% endif %}
+                    <h3 class="text-base font-bold text-[#0e111b]">{{ member.name }}</h3>
+                    <p class="text-[#4e6097] text-sm">{{ member.title }}</p>
+                    <p class="text-xs text-[#0e111b]">{{ member.qualifications }}</p>
+                    <a href="mailto:{{ member.email }}" class="mt-1 text-[#143db7] hover:underline text-xs">{{
+                        member.email
+                        }}</a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
+                {% for member in faculty[5:] %}
+                <div
+                    class="flex flex-col items-center text-center gap-2 rounded-lg border border-[#d0d6e7] bg-[#f8f9fc] p-4">
+                    {% if member.photo %}
+                    <img src="{{ member.photo }}" alt="{{ member.name }}"
+                        class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-16 h-16 mb-2 border-4 border-[#e7eaf3]" />
+                    {% else %}
+                    <svg class="w-16 h-16 mb-2 text-gray-300 rounded-full border-4 border-[#e7eaf3]" fill="none"
+                        stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M6 20c0-2.21 3.58-4 6-4s6 1.79 6 4" />
+                    </svg>
+                    {% endif %}
+                    <h3 class="text-base font-bold text-[#0e111b]">{{ member.name }}</h3>
+                    <p class="text-[#4e6097] text-sm">{{ member.title }}</p>
+                    <p class="text-xs text-[#0e111b]">{{ member.qualifications }}</p>
+                    <a href="mailto:{{ member.email }}" class="mt-1 text-[#143db7] hover:underline text-xs">{{
+                        member.email
+                        }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 mb-8">
+            <h2 class="text-[#0e111b] text-[22px] font-bold leading-tight mb-2">Campus Information</h2>
+            <p class="text-[#0e111b] text-base font-normal leading-normal">Located in the heart of Karachi, our campus
+                provides a vibrant and supportive environment for learning and research. Our state-of-the-art facilities
+                include advanced laboratories, research reactors, and collaborative workspaces designed to foster
+                innovation
+                and discovery.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 mb-8">
+            <h2 class="text-[#0e111b] text-[22px] font-bold leading-tight mb-2">History</h2>
+            <p class="text-[#0e111b] text-base font-normal leading-normal">Founded in 1993, KINPOE has a rich history of
+                pioneering research and education in nuclear science and engineering. From our early contributions to
+                nuclear power development to our current focus on advanced nuclear technologies and applications, we
+                have
+                consistently been at the forefront of the field.</p>
+        </div>
+    </section>
+    {% endblock %}
+    {% include 'includes/footer.html' %}

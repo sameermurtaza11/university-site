@@ -23,6 +23,26 @@ PROGRAMS = [
         'outcomes': 'Research, Industry, Government roles',
         'brochure_url': '/static/files/ms_brochure.pdf'
     },
+    {
+        'id': 2,
+        'title': 'Post Diploma Training Programme (PDTP)',
+        'duration': '1 Year',
+        'eligibility': 'DAE or BSc',
+        'category': 'PDTP',
+        'curriculum': 'Nuclear Plant Operations, Safety, Instrumentation',
+        'outcomes': 'Plant Operator, Technician',
+        'brochure_url': '/static/files/pdtp_brochure.pdf'
+    },
+    {
+        'id': 3,
+        'title': 'Post Graduate Training Programme (PGTP)',
+        'duration': '1 Year',
+        'eligibility': 'BSc Engineering',
+        'category': 'PGTP',
+        'curriculum': 'Nuclear Systems, Control, Safety',
+        'outcomes': 'Junior Engineer, Safety Officer',
+        'brochure_url': '/static/files/pgtp_brochure.pdf'
+    },
     # Add more programs
 ]
 
@@ -59,7 +79,12 @@ def admin_programs():
 
 @app.route('/programs')
 def programs():
-    return render_template('program_grid.html', programs=PROGRAMS, selected_category='All')
+    category = request.args.get('category', 'All')
+    if category and category != 'All':
+        filtered_programs = [p for p in PROGRAMS if p.get('category', '').lower() == category.lower()]
+    else:
+        filtered_programs = PROGRAMS
+    return render_template('program_grid.html', programs=filtered_programs, selected_category=category or 'All')
 
 @app.route('/')
 def index():
@@ -69,6 +94,100 @@ def index():
 def apply(program_id):
     # Logic for applying to the program
     return render_template('apply.html', program_id=program_id)
+
+FACULTY = [
+    {
+        'name': 'Dr. A. Example',
+        'title': 'Professor & Head of Department',
+        'qualifications': 'PhD, Nuclear Engineering',
+        'email': 'a.example@kinpoe.edu.pk',
+        'photo': ''
+    },
+    {
+        'name': 'Dr. B. Example',
+        'title': 'Associate Professor',
+        'qualifications': 'PhD, Radiation Protection',
+        'email': 'b.example@kinpoe.edu.pk',
+        'photo': ''
+    },
+    {
+        'name': 'Dr. C. Example',
+        'title': 'Assistant Professor',
+        'qualifications': 'PhD, Medical Physics',
+        'email': 'c.example@kinpoe.edu.pk',
+        'photo': ''
+    },
+    {
+        'name': 'Dr. D. Example',
+        'title': 'Lecturer',
+        'qualifications': 'MPhil, Nuclear Materials',
+        'email': 'd.example@kinpoe.edu.pk',
+        'photo': ''
+    },
+    {
+        'name': 'Dr. E. Example',
+        'title': 'Senior Lecturer',
+        'qualifications': 'PhD, Reactor Physics',
+        'email': 'e.example@kinpoe.edu.pk',
+        'photo': ''
+    },
+    {
+        'name': 'Dr. F. Example',
+        'title': 'Professor',
+        'qualifications': 'PhD, Nuclear Chemistry',
+        'email': 'f.example@kinpoe.edu.pk',
+        'photo': ''
+    },
+    {
+        'name': 'Dr. G. Example',
+        'title': 'Assistant Professor',
+        'qualifications': 'PhD, Health Physics',
+        'email': 'g.example@kinpoe.edu.pk',
+        'photo': ''
+    },
+    {
+        'name': 'Dr. H. Example',
+        'title': 'Lecturer',
+        'qualifications': 'MPhil, Nuclear Safety',
+        'email': 'h.example@kinpoe.edu.pk',
+        'photo': ''
+    },
+    {
+        'name': 'Dr. I. Example',
+        'title': 'Associate Professor',
+        'qualifications': 'PhD, Nuclear Instrumentation',
+        'email': 'i.example@kinpoe.edu.pk',
+        'photo': ''
+    },
+    {
+        'name': 'Dr. J. Example',
+        'title': 'Professor',
+        'qualifications': 'PhD, Nuclear Policy',
+        'email': 'j.example@kinpoe.edu.pk',
+        'photo': ''
+    },
+]
+
+@app.route('/faculty')
+def faculty():
+    return render_template('includes/faculty.html')
+
+@app.route('/qec')
+def qec():
+    return render_template('includes/qec.html')
+
+@app.route('/research')
+def research():
+    return render_template('research.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html', faculty=FACULTY)
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    # You can add email sending logic here if needed
+    return render_template('contact.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
