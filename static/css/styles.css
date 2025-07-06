@@ -1,3 +1,7 @@
 /* static/styles.css */
 /* Removed body and a styles that may conflict with Tailwind CSS */
 /* You can add only custom styles here that are not covered by Tailwind */
+
+.feature_section {
+    width: 100%;
+    margin: 0 auto; }
