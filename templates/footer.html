@@ -1,31 +1,50 @@
-<footer class="flex flex-col gap-6 px-5 py-10 text-center bg-gray-700 text-white @container">
-  <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-    <a class="text-white text-base @[480px]:text-lg @[850px]:text-xl font-normal leading-normal min-w-40 hover:text-[#4e6097]" href="#">Contact Us</a>
-    <a class="text-white text-base @[480px]:text-lg @[850px]:text-xl font-normal leading-normal min-w-40 hover:text-[#4e6097]" href="#">Privacy Policy</a>
-    <a class="text-white text-base @[480px]:text-lg @[850px]:text-xl font-normal leading-normal min-w-40 hover:text-[#4e6097]" href="#">Terms of Service</a>
+<footer class="w-full bg-gray-700 text-white px-4 py-4">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+
+    <!-- Quick Links -->
+    <div class="flex flex-col gap-1 text-[14px]">
+      <span class="font-bold mb-2">Quick Links</span>
+      <a href="/about" class="hover:text-[#4e6097]">About Us</a>
+      <a href="/programs" class="hover:text-[#4e6097]">Academic Programs</a>
+      <a href="/apply/1" class="hover:text-[#4e6097]">Admissions</a>
+      <a href="/" class="hover:text-[#4e6097]">News & Events</a>
+      <a href="/contact" class="hover:text-[#4e6097]">Contact Us</a>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="flex flex-col gap-2 text-[14px]">
+      <span class="font-bold mb-2">Contact Info</span>
+      <span>Phone: (021) 9920 2777 ext: 2701 & (021) 9923 2733</span>
+      <span>Fax: (021) 99232269</span>
+      <span>Email: <a href="mailto:info@kinpoe.edu.pk"
+          class="underline hover:text-[#4e6097]">info@kinpoe.edu.pk</a></span>
+
+      <!-- Address + Icon inline, clickable -->
+      <a href="https://maps.google.com/?q=Karachi+Institute+of+Power+Engineering,+KANUPP,+Karachi" target="_blank"
+        rel="noopener" class="flex flex-row items-stretch justify-evenly hover:text-[#4e6097]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mr-2" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.828 0l-4.243-4.243a8 8 0 1 1 11.314 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        <span>
+          Karachi Institute of Power Engineering College, PIEAS, KANUPP, P.O. Box No. 12601, Hawks Bay Road, Near Paradise Point, Karachi.
+        </span>
+      </a>
+    </div>
+
+    <!-- Get in Touch Button -->
+    <div class="flex md:justify-end justify-center items-start">
+      <a href="/contact"
+        class="bg-[#143db7] hover:bg-[#0e111b] text-white font-semibold px-5 py-2 mt-[2px] rounded-lg shadow transition">
+        Get in Touch
+      </a>
+    </div>
   </div>
-  <div class="flex flex-wrap justify-center gap-4">
-    <a href="#">
-      <div class="text-white hover:text-[#4e6097]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 @[480px]:w-8 @[480px]:h-8 @[850px]:w-10 @[850px]:h-10" fill="currentColor" viewBox="0 0 256 256">
-          <path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
-        </svg>
-      </div>
-    </a>
-    <a href="#">
-      <div class="text-white hover:text-[#4e6097]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 @[480px]:w-8 @[480px]:h-8 @[850px]:w-10 @[850px]:h-10" fill="currentColor" viewBox="0 0 256 256">
-          <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
-        </svg>
-      </div>
-    </a>
-    <a href="#">
-      <div class="text-white hover:text-[#4e6097]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 @[480px]:w-8 @[480px]:h-8 @[850px]:w-10 @[850px]:h-10" fill="currentColor" viewBox="0 0 256 256">
-          <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80a40,40,0,0,1,40-40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
-        </svg>
-      </div>
-    </a>
+
+  <!-- Copyright -->
+  <div class="w-full text-center text-[12px] mt-4 text-[#aaa]">
+    © 2025 KINPOE. All rights reserved.
   </div>
-  <p class="text-white text-base @[480px]:text-lg @[850px]:text-xl font-normal leading-normal">© 2025 KINPOE. All rights reserved.</p>
 </footer>

@@ -1,7 +1,8 @@
 <!-- File: templates/about.html -->
-{% extends 'layout.html' %}
+<main class="bg-gray-300">
+    {% extends 'layout.html' %}
     {% block content %}
-    <section class="max-w-4xl mx-auto px-4 py-10"
+    <section class="max-w-4xl mx-auto px-4 py-10" style="background-color: #d1d5db;"> <!-- bg-gray-300 -->
         <h1 class="text-[#143db7] tracking-light text-[32px] font-bold leading-tight mb-6">About Us</h1>
         <div class="bg-white rounded-xl shadow p-6 mb-8">
             <h2 class="text-[#0e111b] text-[22px] font-bold leading-tight mb-2">Our Mission</h2>
@@ -87,3 +88,4 @@
     </section>
     {% endblock %}
     {% include 'includes/footer.html' %}
+</main>
