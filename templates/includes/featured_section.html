@@ -1,71 +1,89 @@
 <!-- File: templates/includes/featured_section.html -->
-<div class="relative flex min-h-screen flex-col bg-[#f8f9fc] group/design-root"
+<div class="relative flex min-h-screen flex-col bg-gray-300 group/design-root"
   style='font-family: Newsreader, "Noto Sans", sans-serif;'>
   <div class="layout-container flex h-full w-100 grow flex-col">
     <div class="w-full px-1 @[480px]:px-2 @[850px]:px-3 flex flex-1 justify-center py-5 @[480px]:py-8 @[850px]:py-12">
-      <div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1 gap-6 @[480px]:gap-8 @[850px]:gap-10">
+      <div
+        class="layout-content-container flex flex-col w-full max-w-[960px] flex-1 gap-6 @[480px]:gap-8 @[850px]:gap-10">
         {% include 'includes/hero.html' %}
-        <h2 class="text-[#0e111b] text-[clamp(1.1rem,3vw,1.5rem)] font-bold leading-tight tracking-[-0.015em] px-2 @[480px]:px-3 @[850px]:px-4 pb-3 pt-5">Featured Programs</h2>
-        <div class="flex flex-row flex-wrap gap-3 @[480px]:gap-5 @[850px]:gap-7 p-2 @[480px]:p-3 @[850px]:p-4 overflow-x-auto">
+        <h2
+          class="text-[#0e111b] text-[clamp(1.1rem,3vw,1.5rem)] font-bold leading-tight tracking-[-0.015em] px-2 @[480px]:px-3 @[850px]:px-4 pb-3 pt-5">
+          Featured Programs</h2>
+        <div
+          class="flex flex-row flex-wrap gap-3 @[480px]:gap-5 @[850px]:gap-7 p-2 @[480px]:p-3 @[850px]:p-4 overflow-x-auto">
           <!-- MS-NPE Program Card -->
-          <div class="flex flex-col min-w-[260px] max-w-[320px] flex-1 pb-3 bg-white rounded-xl shadow-md overflow-hidden">
-            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVml09M66_mhkKWmPSMfqT2k0dlQYEkGQhI4czDsSiQ_AeDQ7WE6qllg3plyaEec5mGNAkHznzgXcQkEdMNFoXOsm3gRxDJ9XMno326jNNYY3k7cn3FwZzy8ScSj3eWUFSIKqsTl8ilqsXZ3VIIUFP_7ZJs0isJya2JINZmVgWm76xf9PsYsLX80F7gwg7TE90_x4_Q8nxwYrCAocMVpt4dhlWrHHOgap3OlkVTHOtn-J7hzHySENJZOi3o18jESYhqyKbgMWFhmz6"
-                alt="MS in Nuclear Power Engineering" class="w-full h-full object-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]" loading="lazy" />
+          <div
+            class="flex flex-col min-w-[260px] max-w-[320px] flex-1 pb-3 bg-white rounded-xl shadow-md overflow-hidden">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]">
+              <!-- https://lh3.googleusercontent.com/aida-public/AB6AXuCVml09M66_mhkKWmPSMfqT2k0dlQYEkGQhI4czDsSiQ_AeDQ7WE6qllg3plyaEec5mGNAkHznzgXcQkEdMNFoXOsm3gRxDJ9XMno326jNNYY3k7cn3FwZzy8ScSj3eWUFSIKqsTl8ilqsXZ3VIIUFP_7ZJs0isJya2JINZmVgWm76xf9PsYsLX80F7gwg7TE90_x4_Q8nxwYrCAocMVpt4dhlWrHHOgap3OlkVTHOtn-J7hzHySENJZOi3o18jESYhqyKbgMWFhmz6 -->
+              <img
+                src="/static/media/piaes_logo.png"
+                alt="MS in Nuclear Power Engineering"
+                class="w-full h-full object-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]"
+                loading="lazy" />
             </div>
             <div class="p-3 @[480px]:p-4 flex flex-col gap-1">
-              <p class="text-[#0e111b] text-base @[480px]:text-lg @[850px]:text-xl font-bold leading-normal">MS in Nuclear Power Engineering</p>
-              <p class="text-[#4e6097] text-sm @[480px]:text-base @[850px]:text-lg font-normal leading-normal">A two-year fellowship-based program for engineers and scientists, covering all aspects of nuclear power plant design, construction, and operation.</p>
-              <a href="/programs/1" class="text-[#143db7] text-xs @[480px]:text-sm font-semibold mt-1 hover:underline">Learn more</a>
+              <p class="text-[#0e111b] text-base @[480px]:text-lg @[850px]:text-xl font-bold leading-normal">MS in
+                Nuclear Power Engineering</p>
+              <p class="text-[#4e6097] text-sm @[480px]:text-base @[850px]:text-lg font-normal leading-normal">A
+                two-year fellowship-based program for engineers and scientists, covering all aspects of nuclear power
+                plant design, construction, and operation.</p>
+              <a href="/programs/1"
+                class="text-[#143db7] text-xs @[480px]:text-sm font-semibold mt-1 hover:underline">Learn more</a>
             </div>
           </div>
           <!-- PGTP Program Card -->
-          <div class="flex flex-col min-w-[260px] max-w-[320px] flex-1 pb-3 bg-white rounded-xl shadow-md overflow-hidden">
-            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCACOi_LTJuN8JWRggw3Q_u6i6POZ8XsCcJQ7tL0Lq3Oz8DO3JPzvA5Fl57RT2VjFNEaSGTrAu0SoE644prqvvAu-NykQFCdjia-2EW5MjKhZ4ct5J9KIO96hn-NuYzuwuWEzd3HwEJJWswJxvL7YiH8hXVmPCVzplRhvbojsnj07geBUcHosUFU75m6nOr6or9GG4no9w-mdeBvsZ9nBFzwbfF1Cl92eYfh6igEdLUzOKcu84sXGAPTep3wwptd4xciHnG8l1FStA4"
-                alt="Post Graduate Training Programme (PGTP)" class="w-full h-full object-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]" loading="lazy" />
+          <div
+            class="flex flex-col min-w-[260px] max-w-[320px] flex-1 pb-3 bg-white rounded-xl shadow-md overflow-hidden">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]">
+              <!-- https://lh3.googleusercontent.com/aida-public/AB6AXuCACOi_LTJuN8JWRggw3Q_u6i6POZ8XsCcJQ7tL0Lq3Oz8DO3JPzvA5Fl57RT2VjFNEaSGTrAu0SoE644prqvvAu-NykQFCdjia-2EW5MjKhZ4ct5J9KIO96hn-NuYzuwuWEzd3HwEJJWswJxvL7YiH8hXVmPCVzplRhvbojsnj07geBUcHosUFU75m6nOr6or9GG4no9w-mdeBvsZ9nBFzwbfF1Cl92eYfh6igEdLUzOKcu84sXGAPTep3wwptd4xciHnG8l1FStA4 -->
+              <img
+                src="/static/media/paec_logo.png"
+                alt="Post Graduate Training Programme (PGTP)"
+                class="w-auto h-auto object-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]"
+                loading="lazy" />
             </div>
             <div class="p-3 @[480px]:p-4 flex flex-col gap-1">
-              <p class="text-[#0e111b] text-base @[480px]:text-lg @[850px]:text-xl font-bold leading-normal">Post Graduate Training Programme (PGTP)</p>
-              <p class="text-[#4e6097] text-sm @[480px]:text-base @[850px]:text-lg font-normal leading-normal">A one-year intensive program for engineers, with classroom, lab, and on-job training for nuclear facility operation and maintenance.</p>
-              <a href="/programs/2" class="text-[#143db7] text-xs @[480px]:text-sm font-semibold mt-1 hover:underline">Learn more</a>
+              <p class="text-[#0e111b] text-base @[480px]:text-lg @[850px]:text-xl font-bold leading-normal">Post
+                Graduate Training Programme (PGTP)</p>
+              <p class="text-[#4e6097] text-sm @[480px]:text-base @[850px]:text-lg font-normal leading-normal">A
+                one-year intensive program for engineers, with classroom, lab, and on-job training for nuclear facility
+                operation and maintenance.</p>
+              <a href="/programs/2"
+                class="text-[#143db7] text-xs @[480px]:text-sm font-semibold mt-1 hover:underline">Learn more</a>
             </div>
           </div>
           <!-- PDTP Program Card -->
-          <div class="flex flex-col min-w-[260px] max-w-[320px] flex-1 pb-3 bg-white rounded-xl shadow-md overflow-hidden">
-            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAseuPqh2P3RPI5HufPOjjRrLQWd4YGWd_aZ-cTM2eeHeDI8Y196YUD8oWd6id99N3GcdV2eMfjjFkA63GQmK-CKiLpgRut5qNWLXR6OD08FIqheL5GZIpI0Top4cDDpJDpwUIIDOtyivKx3Y2CHcFRIg1nNeVNSzNjSN-puow-R5UcMAdBkEdmP8C_Jk4mxQ_gnWWKrjD_68-PCx3ZmUKlaqP9GYXm41Ug2jCr1xureaXzCnKboSAIut3A5SOqhBSjHsd4ksCQOZB1"
-                alt="Post Diploma Training Programme (PDTP)" class="w-full h-full object-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]" loading="lazy" />
+          <div
+            class="flex flex-col min-w-[260px] max-w-[320px] flex-1 pb-3 bg-white rounded-xl shadow-md overflow-hidden">
+            <div
+              class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]">
+              <!-- https://lh3.googleusercontent.com/aida-public/AB6AXuAseuPqh2P3RPI5HufPOjjRrLQWd4YGWd_aZ-cTM2eeHeDI8Y196YUD8oWd6id99N3GcdV2eMfjjFkA63GQmK-CKiLpgRut5qNWLXR6OD08FIqheL5GZIpI0Top4cDDpJDpwUIIDOtyivKx3Y2CHcFRIg1nNeVNSzNjSN-puow-R5UcMAdBkEdmP8C_Jk4mxQ_gnWWKrjD_68-PCx3ZmUKlaqP9GYXm41Ug2jCr1xureaXzCnKboSAIut3A5SOqhBSjHsd4ksCQOZB1 -->
+              <img
+                src="/static/media/kinpoe_logo.png"
+                alt="Post Diploma Training Programme (PDTP)"
+                class="w-full h-full object-cover rounded-t-xl min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]"
+                loading="lazy" />
             </div>
             <div class="p-3 @[480px]:p-4 flex flex-col gap-1">
-              <p class="text-[#0e111b] text-base @[480px]:text-lg @[850px]:text-xl font-bold leading-normal">Post Diploma Training Programme (PDTP)</p>
-              <p class="text-[#4e6097] text-sm @[480px]:text-base @[850px]:text-lg font-normal leading-normal">A one-year program for diploma holders, combining classroom, lab, and on-job training for nuclear technology careers.</p>
-              <a href="/programs/3" class="text-[#143db7] text-xs @[480px]:text-sm font-semibold mt-1 hover:underline">Learn more</a>
+              <p class="text-[#0e111b] text-base @[480px]:text-lg @[850px]:text-xl font-bold leading-normal">Post
+                Diploma Training Programme (PDTP)</p>
+              <p class="text-[#4e6097] text-sm @[480px]:text-base @[850px]:text-lg font-normal leading-normal">A
+                one-year program for diploma holders, combining classroom, lab, and on-job training for nuclear
+                technology careers.</p>
+              <a href="/programs/3"
+                class="text-[#143db7] text-xs @[480px]:text-sm font-semibold mt-1 hover:underline">Learn more</a>
             </div>
           </div>
         </div>
-        <h2 class="text-[#0e111b] text-[22px] font-bold leading-tight tracking-[-0.015em] px-2 pb-3 pt-5">Announcements
-          &amp; News</h2>
-        <div class="p-2">
-          <div class="flex flex-col @[850px]:flex-row items-stretch justify-between gap-4 rounded-xl">
-            <div class="flex flex-col gap-1 flex-[2_2_0px]">
-              <p class="text-[#4e6097] text-sm font-normal leading-normal">Latest News</p>
-              <p class="text-[#0e111b] text-base font-bold leading-tight">New Research Grant Awarded to Nuclear Science
-                Faculty</p>
-              <p class="text-[#4e6097] text-sm font-normal leading-normal">Dr. Olivia Bennett's team receives funding
-                for groundbreaking research in advanced reactor technology.</p>
-            </div>
-            <div class="w-full @[850px]:w-1/2 bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1 min-h-[120px] @[480px]:min-h-[180px] @[850px]:min-h-[220px]"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgGFJEYyyp0g4OmNVHiP8WCZ5VSs04oKfOIK5W9-UMeONcwNCUBxKMPncB1HUMcPgUZw5aB-ZFWcT5oioJBUTT3nvFeg2p9vBxIDNAmUrWPaMbtyEvzDFiouHsTGaLa6H8fATMWLzvQ8rIjwEEVjl8-sX8WoE-k7oyijNy5VcCVX47PnnHniVDO4e3na3_TEKNhDoPH1FeyfOwrNy9TRqQ2rcu852K1bu0ncC0OSWUrFPLRIy74eDCNqil5GHOYyDKMrEc_ip4e_zo");'>
-            </div>
-          </div>
-        </div>
-        <!-- Announcements & News section ends here -->
-        <div class="w-full flex justify-center px-1 @[480px]:px-2 @[850px]:px-0">
-          <div class="w-full max-w-[480px]">
-            {% include 'includes/newsletter.html' %}
-          </div>
-        </div>
+
+        <!-- Announcements & News section starts here -->
+        {% include 'includes/announcements_news.html' %}
+
+        <!-- Newsletter section starts here -->
+        {% include 'includes/newsletter.html' %}
       </div>
     </div>
   </div>
